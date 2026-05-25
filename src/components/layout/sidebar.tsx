@@ -126,7 +126,7 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
               key={item.label}
               onClick={() => navigateTo(item.href)}
               className={cn(
-                'flex w-full items-center gap-2.5 rounded-[6px] px-2.5 py-[7px] text-left text-[13px] transition-all',
+                'flex w-full items-center gap-2.5 rounded-[6px] px-2.5 py-2 text-left text-[13px] transition-all',
                 isActive
                   ? 'bg-sidebar-accent font-medium'
                   : 'text-muted-foreground hover:bg-sidebar-accent/60 hover:'

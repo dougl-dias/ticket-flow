@@ -83,19 +83,7 @@ export function RevenueChart() {
         </div>
       </CardHeader>
 
-      <CardContent className='flex flex-col gap-4'>
-        <div className='flex items-center gap-4'>
-          <div className='flex items-center gap-1.5'>
-            <span className='bg-chart-1 h-2.5 w-2.5 rounded-sm' />
-            <span className='text-muted-foreground text-[11px]'>Resolvidos</span>
-          </div>
-
-          <div className='flex items-center gap-1.5'>
-            <span className='bg-chart-2 h-2.5 w-2.5 rounded-sm' />
-            <span className='text-muted-foreground text-[11px]'>Meta</span>
-          </div>
-        </div>
-
+      <CardContent className='flex flex-col gap-2'>
         <div className='h-56 sm:h-52'>
           <ChartContainer config={chartConfig} className='aspect-auto h-full w-full'>
             <BarChart
@@ -120,6 +108,18 @@ export function RevenueChart() {
               <Bar dataKey='meta' fill='var(--color-meta)' radius={4} maxBarSize={24} />
             </BarChart>
           </ChartContainer>
+        </div>
+
+        <div className='flex items-center justify-center gap-3'>
+          <div className='flex items-center gap-1.5'>
+            <span className='bg-chart-1 h-2.5 w-2.5 rounded-sm' />
+            <span className='text-muted-foreground text-[11px]'>Resolvidos</span>
+          </div>
+
+          <div className='flex items-center gap-1.5'>
+            <span className='bg-chart-2 h-2.5 w-2.5 rounded-sm' />
+            <span className='text-muted-foreground text-[11px]'>Meta</span>
+          </div>
         </div>
       </CardContent>
     </Card>
