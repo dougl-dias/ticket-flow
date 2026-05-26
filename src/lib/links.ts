@@ -7,7 +7,7 @@ import {
   Settings,
   Ticket,
   Users,
-  UsersRound,
+  UsersRound
 } from 'lucide-react'
 
 export type NavPage =
@@ -37,7 +37,7 @@ export const navItems: NavItem[] = [
     title: 'Visão geral',
     description: 'Resumo operacional do suporte',
     href: '/',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: Users,
@@ -46,7 +46,7 @@ export const navItems: NavItem[] = [
     description: '1.247 usuários cadastrados',
     badge: '1.2k',
     href: '/customers',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: Ticket,
@@ -55,7 +55,7 @@ export const navItems: NavItem[] = [
     description: '24 chamados ativos - 7 criticos em aberto',
     badge: '24',
     href: '/tickets',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: GitBranch,
@@ -63,7 +63,7 @@ export const navItems: NavItem[] = [
     title: 'Quadro',
     description: '9 tickets em andamento',
     href: '/pipeline',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: CheckSquare,
@@ -72,7 +72,7 @@ export const navItems: NavItem[] = [
     description: '8 acoes pendentes',
     badge: '8',
     href: '/tasks',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: UsersRound,
@@ -80,7 +80,7 @@ export const navItems: NavItem[] = [
     title: 'Equipe',
     description: '12 atendentes ativos',
     href: '/teams',
-    section: 'Atendimento',
+    section: 'Atendimento'
   },
   {
     icon: BarChart2,
@@ -88,7 +88,7 @@ export const navItems: NavItem[] = [
     title: 'Relatórios',
     description: 'Indicadores de suporte - Maio 2026',
     href: '/reports',
-    section: 'Gestão',
+    section: 'Gestão'
   },
   {
     icon: Settings,
@@ -96,8 +96,8 @@ export const navItems: NavItem[] = [
     title: 'Configurações',
     description: 'Conta, equipe e workspace',
     href: '/settings',
-    section: 'Gestão',
-  },
+    section: 'Gestão'
+  }
 ]
 
 export function getNavItemByPathname(pathname: string) {
