@@ -7,7 +7,7 @@ import { Bell, ChevronRight, PanelLeft, Plus, SlidersHorizontal } from 'lucide-r
 import { Avatar, AvatarFallback } from '../ui/avatar'
 import { Button } from '../ui/button'
 
-import { getNavItemByPathname } from '@/lib/links'
+import { getNavItemByPathname } from '@/constants/links'
 
 type TopNavbarProps = {
   onSidebarToggle?: () => void

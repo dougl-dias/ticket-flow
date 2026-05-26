@@ -9,7 +9,7 @@ import { Headphones, LogOut, Search, X } from 'lucide-react'
 import { Avatar, AvatarFallback } from '../ui/avatar'
 import { Button } from '../ui/button'
 
-import { getNavItemsBySection } from '@/lib/links'
+import { getNavItemsBySection } from '@/constants/links'
 
 import { cn } from '@/lib/utils'
 
