@@ -5,12 +5,7 @@ import { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from '@/components/ui/chart'
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 
 import { cn } from '@/lib/utils'
 
@@ -26,7 +21,7 @@ const data = [
   { month: 'Set', resolvidos: 380, meta: 290 },
   { month: 'Out', resolvidos: 420, meta: 300 },
   { month: 'Nov', resolvidos: 390, meta: 320 },
-  { month: 'Dez', resolvidos: 460, meta: 350 },
+  { month: 'Dez', resolvidos: 460, meta: 350 }
 ]
 
 type Period = '12M' | '6M' | '3M' | '1M'
@@ -36,12 +31,12 @@ const periods: Period[] = ['12M', '6M', '3M', '1M']
 const chartConfig = {
   resolvidos: {
     label: 'Resolvidos',
-    color: 'var(--chart-1)',
+    color: 'var(--chart-1)'
   },
   meta: {
     label: 'Meta',
-    color: 'var(--chart-2)',
-  },
+    color: 'var(--chart-2)'
+  }
 } satisfies ChartConfig
 
 export function RevenueChart() {
@@ -51,7 +46,7 @@ export function RevenueChart() {
     '12M': data,
     '6M': data.slice(6),
     '3M': data.slice(9),
-    '1M': data.slice(11),
+    '1M': data.slice(11)
   }
 
   const filtered = filters[period]
@@ -86,21 +81,12 @@ export function RevenueChart() {
       <CardContent className='flex flex-col gap-2'>
         <div className='h-56 sm:h-52'>
           <ChartContainer config={chartConfig} className='aspect-auto h-full w-full'>
-            <BarChart
-              accessibilityLayer
-              data={filtered}
-              margin={{ top: 8, right: 8, left: -20, bottom: 0 }}
-            >
+            <BarChart accessibilityLayer data={filtered} margin={{ top: 8, right: 8, left: -20, bottom: 0 }}>
               <CartesianGrid vertical={false} strokeDasharray='3 3' />
 
               <XAxis dataKey='month' tickLine={false} tickMargin={8} axisLine={false} />
 
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                tickMargin={8}
-                tickFormatter={(value) => `${value}`}
-              />
+              <YAxis tickLine={false} axisLine={false} tickMargin={8} tickFormatter={(value) => `${value}`} />
 
               <ChartTooltip cursor={false} content={<ChartTooltipContent indicator='dashed' />} />
 

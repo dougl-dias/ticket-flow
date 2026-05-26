@@ -7,7 +7,7 @@ const stages = [
   { label: 'Triagem', count: 142, value: '65%', pct: 65, color: 'bg-sky-500' },
   { label: 'Atendimento', count: 87, value: '40%', pct: 40, color: 'bg-purple-500' },
   { label: 'Aguardando', count: 48, value: '22%', pct: 22, color: 'bg-amber-500' },
-  { label: 'Resolvidos', count: 24, value: '11%', pct: 11, color: 'bg-emerald-500' },
+  { label: 'Resolvidos', count: 24, value: '11%', pct: 11, color: 'bg-emerald-500' }
 ]
 
 export function FunnelChart() {

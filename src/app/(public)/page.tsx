@@ -3,10 +3,10 @@ import { getServerSession } from 'next-auth'
 
 import { authOptions } from '@/lib/auth'
 
-export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default async function PublicPage() {
   const session = await getServerSession(authOptions)
 
-  if (!session) redirect('/login')
+  if (session) redirect('/dashboard')
 
-  return children
+  redirect('/login')
 }

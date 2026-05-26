@@ -160,7 +160,7 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
 
         {session.data?.user && (
           <div className='flex min-w-0 flex-1 flex-col'>
-            <span className='text-foreground truncate text-[12px] leading-tight font-semibold'>
+            <span className='text-foreground truncate text-xs leading-tight font-semibold'>
               {session.data.user.name ?? ''}
             </span>
             <span className='text-muted-foreground truncate text-[10px] leading-tight'>

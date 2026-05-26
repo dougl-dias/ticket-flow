@@ -5,12 +5,7 @@ import { Area, CartesianGrid, ComposedChart, Line, XAxis } from 'recharts'
 import { TrendingUp, TrendingDown, Clock3, Inbox, CircleAlert, CheckCircle2 } from 'lucide-react'
 
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  type ChartConfig,
-} from '@/components/ui/chart'
+import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart'
 
 import { cn } from '@/lib/utils'
 
@@ -18,13 +13,13 @@ const sparkData = [
   [4, 7, 5, 9, 6, 10, 8, 12, 9, 14],
   [10, 8, 11, 7, 9, 12, 8, 6, 9, 11],
   [3, 5, 4, 7, 6, 8, 7, 9, 8, 11],
-  [8, 9, 7, 10, 11, 9, 12, 13, 11, 14],
+  [8, 9, 7, 10, 11, 9, 12, 13, 11, 14]
 ].map((d) => d.map((v, i) => ({ x: i, v })))
 
 const chartConfig = {
   v: {
-    label: 'Valor',
-  },
+    label: 'Valor'
+  }
 } satisfies ChartConfig
 
 const kpis = [
@@ -38,7 +33,7 @@ const kpis = [
     icon: Inbox,
     color: 'text-sky-500',
     chartColor: 'oklch(68.5% 0.169 237.323)',
-    data: sparkData[0],
+    data: sparkData[0]
   },
   {
     id: 'critical-tickets',
@@ -50,7 +45,7 @@ const kpis = [
     icon: CircleAlert,
     color: 'text-red-500',
     chartColor: 'oklch(63.7% 0.237 25.331)',
-    data: sparkData[1],
+    data: sparkData[1]
   },
   {
     id: 'resolved-tickets',
@@ -62,7 +57,7 @@ const kpis = [
     icon: CheckCircle2,
     color: 'text-emerald-500',
     chartColor: 'oklch(69.6% 0.17 162.48)',
-    data: sparkData[2],
+    data: sparkData[2]
   },
   {
     id: 'average-response-time',
@@ -74,8 +69,8 @@ const kpis = [
     icon: Clock3,
     color: 'text-amber-500',
     chartColor: 'oklch(76.9% 0.188 70.08)',
-    data: sparkData[3],
-  },
+    data: sparkData[3]
+  }
 ]
 
 export function KpiCards() {
@@ -115,10 +110,7 @@ export function KpiCards() {
 
                   <XAxis dataKey='x' hide />
 
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent hideLabel nameKey='v' />}
-                  />
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel nameKey='v' />} />
 
                   <Area
                     dataKey='v'
@@ -141,7 +133,7 @@ export function KpiCards() {
                       fill: kpi.chartColor,
                       stroke: kpi.chartColor,
                       strokeWidth: 2,
-                      r: 2,
+                      r: 2
                     }}
                   />
                 </ComposedChart>
@@ -150,17 +142,8 @@ export function KpiCards() {
           </CardContent>
 
           <CardFooter className='p-2'>
-            <div
-              className={cn(
-                'flex items-center gap-1.5',
-                kpi.up ? 'text-emerald-500' : 'text-red-500'
-              )}
-            >
-              {kpi.up ? (
-                <TrendingUp className='h-3.5 w-3.5' />
-              ) : (
-                <TrendingDown className='h-3.5 w-3.5' />
-              )}
+            <div className={cn('flex items-center gap-1.5', kpi.up ? 'text-emerald-500' : 'text-red-500')}>
+              {kpi.up ? <TrendingUp className='h-3.5 w-3.5' /> : <TrendingDown className='h-3.5 w-3.5' />}
 
               <span className='text-xs font-medium'>{kpi.change}</span>
               <span className='text-muted-foreground text-xs'>{kpi.sub}</span>
