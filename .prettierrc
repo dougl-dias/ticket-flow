@@ -2,7 +2,7 @@
   "semi": false,
   "singleQuote": true,
   "jsxSingleQuote": true,
-  "printWidth": 100,
-  "trailingComma": "es5",
+  "printWidth": 110,
+  "trailingComma": "none",
   "plugins": ["prettier-plugin-tailwindcss"]
 }

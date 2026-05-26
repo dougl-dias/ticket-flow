@@ -62,9 +62,7 @@ export function TopNavbar({ onSidebarToggle }: TopNavbarProps) {
       </Button>
 
       <Avatar className='h-7 w-7 cursor-pointer'>
-        <AvatarFallback className='bg-primary text-primary-foreground text-[10px] font-bold'>
-          AM
-        </AvatarFallback>
+        <AvatarFallback className='bg-primary text-primary-foreground text-[10px] font-bold'></AvatarFallback>
       </Avatar>
     </header>
   )

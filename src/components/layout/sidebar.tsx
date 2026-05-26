@@ -2,6 +2,8 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 
+import { signOut, useSession } from 'next-auth/react'
+
 import { Headphones, LogOut, Search, X } from 'lucide-react'
 
 import { Avatar, AvatarFallback } from '../ui/avatar'
@@ -18,12 +20,18 @@ type SidebarProps = {
 }
 
 export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
+  const session = useSession()
+
   const router = useRouter()
   const pathname = usePathname()
 
-  function navigateTo(href: string) {
+  const navigateTo = (href: string) => {
     router.push(href)
     onNavigate?.()
+  }
+
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: '/login' })
   }
 
   return (
@@ -102,9 +110,7 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
                 <span
                   className={cn(
                     'min-w-4 rounded-full px-1.5 py-0 text-center text-[10px] leading-4 font-medium',
-                    isActive
-                      ? 'bg-primary/20 text-primary'
-                      : 'bg-sidebar-accent text-muted-foreground'
+                    isActive ? 'bg-primary/20 text-primary' : 'bg-sidebar-accent text-muted-foreground'
                   )}
                 >
                   {item.badge}
@@ -152,16 +158,18 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
           </AvatarFallback>
         </Avatar>
 
-        <div className='flex min-w-0 flex-1 flex-col'>
-          <span className='text-foreground truncate text-[12px] leading-tight font-semibold'>
-            Douglas Dias
-          </span>
-          <span className='text-muted-foreground truncate text-[10px] leading-tight'>
-            douglas@ticketflow.com
-          </span>
-        </div>
+        {session.data?.user && (
+          <div className='flex min-w-0 flex-1 flex-col'>
+            <span className='text-foreground truncate text-[12px] leading-tight font-semibold'>
+              {session.data.user.name ?? ''}
+            </span>
+            <span className='text-muted-foreground truncate text-[10px] leading-tight'>
+              {session.data.user.email ?? ''}
+            </span>
+          </div>
+        )}
 
-        <Button variant={'ghost'} size={'icon-lg'} onClick={() => router.push('/logout')}>
+        <Button variant={'ghost'} size={'icon-lg'} onClick={handleLogout}>
           <LogOut className='h-3.5 w-3.5' />
         </Button>
       </div>

@@ -1,10 +1,17 @@
+import { redirect } from 'next/navigation'
+import { getServerSession } from 'next-auth'
 import { Headphones } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { authOptions } from '@/lib/auth'
 
 import { LoginForm } from './login-form'
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const session = await getServerSession(authOptions)
+
+  if (session) redirect('/dashboard')
+
   return (
     <main className='bg-background text-foreground flex min-h-screen items-center justify-center px-4'>
       <section className='w-full max-w-96'>
