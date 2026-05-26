@@ -1,3 +1,3 @@
 export default function CustomersPage() {
-  return <div>page</div>
+  return <div>CustomersPage</div>
 }
