@@ -35,7 +35,7 @@ export function TopNavbar({ onSidebarToggle }: TopNavbarProps) {
 
         <ChevronRight className='text-muted-foreground/50 h-3 w-3' />
 
-        <span className='text-foreground text-[13px] font-semibold'>{meta.title}</span>
+        <span className='text-[13px] font-semibold'>{meta.title}</span>
       </div>
 
       <div className='bg-border mx-1 h-4 w-px' />
@@ -62,7 +62,7 @@ export function TopNavbar({ onSidebarToggle }: TopNavbarProps) {
       </Button>
 
       <Avatar className='h-7 w-7 cursor-pointer'>
-        <AvatarFallback className='bg-primary text-primary-foreground text-[10px] font-bold'></AvatarFallback>
+        <AvatarFallback className='bg-primary text-[10px] font-bold'>DD</AvatarFallback>
       </Avatar>
     </header>
   )

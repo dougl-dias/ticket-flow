@@ -36,7 +36,7 @@ export const navItems: NavItem[] = [
     label: 'Dashboard',
     title: 'Visão geral',
     description: 'Resumo operacional do suporte',
-    href: '/',
+    href: '/dashboard',
     section: 'Atendimento'
   },
   {

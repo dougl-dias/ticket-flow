@@ -134,7 +134,7 @@ export function LoginForm() {
           <div>
             <a
               href='#'
-              className='text-muted-foreground hover:text-foreground ml-auto text-xs underline-offset-4 hover:underline'
+              className='text-muted-foreground hover: ml-auto text-xs underline-offset-4 hover:underline'
             >
               Esqueci minha senha
             </a>

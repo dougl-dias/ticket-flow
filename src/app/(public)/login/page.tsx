@@ -13,10 +13,10 @@ export default async function LoginPage() {
   if (session) redirect('/dashboard')
 
   return (
-    <main className='bg-background text-foreground flex min-h-screen items-center justify-center px-4'>
+    <main className='bg-background flex min-h-screen items-center justify-center px-4'>
       <section className='w-full max-w-96'>
         <div className='mb-8 flex flex-col items-center gap-3 text-center'>
-          <div className='bg-primary text-primary-foreground flex h-10 w-10 items-center justify-center rounded-[8px]'>
+          <div className='bg-primary flex h-10 w-10 items-center justify-center rounded-[8px]'>
             <Headphones className='h-5 w-5' />
           </div>
 

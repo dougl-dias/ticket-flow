@@ -43,13 +43,11 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
     >
       <div className='border-sidebar-border flex h-14 shrink-0 items-center gap-2.5 border-b px-4'>
         <div className='bg-primary flex h-6 w-6 shrink-0 items-center justify-center rounded-[6px]'>
-          <Headphones className='text-primary-foreground h-3.5 w-3.5' strokeWidth={2.5} />
+          <Headphones className='h-3.5 w-3.5' strokeWidth={2.5} />
         </div>
 
         <div className='flex min-w-0 flex-col'>
-          <span className='text-foreground text-[13px] leading-tight font-semibold tracking-tight'>
-            TicketFlow
-          </span>
+          <span className='text-[13px] leading-tight font-semibold tracking-tight'>TicketFlow</span>
           <span className='text-muted-foreground text-[10px] leading-tight'>Suporte</span>
         </div>
 
@@ -104,7 +102,7 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
                 strokeWidth={2}
               />
 
-              <span className='text-foreground flex-1'>{item.title}</span>
+              <span className='flex-1'>{item.title}</span>
 
               {item.badge && (
                 <span
@@ -153,14 +151,12 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
 
       <div className='border-sidebar-border flex items-center gap-2.5 border-t px-3 py-3'>
         <Avatar className='h-7 w-7 shrink-0'>
-          <AvatarFallback className='bg-primary text-primary-foreground text-[10px] font-bold'>
-            DD
-          </AvatarFallback>
+          <AvatarFallback className='bg-primary text-[10px] font-bold'>DD</AvatarFallback>
         </Avatar>
 
         {session.data?.user && (
           <div className='flex min-w-0 flex-1 flex-col'>
-            <span className='text-foreground truncate text-xs leading-tight font-semibold'>
+            <span className='truncate text-xs leading-tight font-semibold'>
               {session.data.user.name ?? ''}
             </span>
             <span className='text-muted-foreground truncate text-[10px] leading-tight'>

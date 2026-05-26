@@ -67,9 +67,7 @@ export function RevenueChart() {
               onClick={() => setPeriod(p)}
               className={cn(
                 'rounded px-2.5 py-1 text-xs font-medium transition-all',
-                period === p
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
+                period === p ? 'bg-background shadow-sm' : 'text-muted-foreground hover:'
               )}
             >
               {p}
