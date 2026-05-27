@@ -64,7 +64,7 @@ export function Sidebar({ className, onClose, onNavigate }: SidebarProps) {
       </div>
 
       <div className='px-3 pt-3 pb-1'>
-        <button className='bg-sidebar-accent border-sidebar-border text-muted-foreground hover: hover:border-border flex h-8 w-full items-center gap-2 rounded-md border px-2.5 text-[12px] transition-all hover:cursor-pointer'>
+        <button className='bg-sidebar-accent border-sidebar-border text-muted-foreground hover: hover:border-border flex h-8 w-full items-center gap-2 rounded-md border px-2.5 text-xs transition-all hover:cursor-pointer'>
           <Search className='h-3.5 w-3.5 shrink-0' />
 
           <span className='flex-1 text-left'>Buscar tickets...</span>

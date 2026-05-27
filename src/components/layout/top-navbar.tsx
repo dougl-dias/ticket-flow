@@ -40,7 +40,7 @@ export function TopNavbar({ onSidebarToggle }: TopNavbarProps) {
 
       <div className='bg-border mx-1 h-4 w-px' />
 
-      <span className='text-muted-foreground hidden text-[12px] md:block'>{meta.description}</span>
+      <span className='text-muted-foreground hidden text-xs md:block'>{meta.description}</span>
 
       <div className='flex-1' />
 
